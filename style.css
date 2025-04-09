@@ -1,0 +1,129 @@
+/* Importa il font (se usato) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    /* Colori stile oscilloscopio */
+    --oscilloscope-green: #00ff41; /* Verde brillante */
+    --oscilloscope-bg: #0a0a0a;     /* Sfondo molto scuro */
+    --oscilloscope-border: #0f0; /* Colore per bordi/glow */
+    --oscilloscope-text: #e0e0e0;  /* Testo leggermente spento per leggibilità */
+    --oscilloscope-text-bright: var(--oscilloscope-green); /* Testo brillante per titoli/enfasi */
+}
+
+body {
+    background-color: var(--oscilloscope-bg);
+    color: var(--oscilloscope-text);
+    font-family: 'Orbitron', sans-serif; /* Applica il font tech */
+    /* font-family: 'Courier New', Courier, monospace; /* Alternativa Monospace */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Impedisce lo scroll della pagina principale */
+}
+
+/* Stile per lo sfondo del diagramma */
+#tree-diagram-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Dietro a tutto */
+    background-color: var(--oscilloscope-bg);
+    /* Aggiungere qui stili per pattern, linee, ecc. se non si usa SVG/Canvas */
+    /* Esempio: background-image: linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; */
+}
+
+.main-content {
+    position: relative;
+    z-index: 1; /* Sopra lo sfondo */
+    padding: 20px;
+}
+
+/* Stile per i Modal */
+.modal-content {
+    background-color: rgba(10, 10, 10, 0.9); /* Sfondo modale leggermente trasparente */
+    border: 1px solid var(--oscilloscope-border);
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.3); /* Effetto glow */
+    color: var(--oscilloscope-text);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--oscilloscope-border);
+    color: var(--oscilloscope-text-bright);
+    text-shadow: 0 0 5px var(--oscilloscope-border); /* Glow sul testo del titolo */
+}
+
+.modal-header .modal-title {
+     font-weight: bold;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--oscilloscope-border);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Stile bottoni custom Oscilloscope */
+.btn-oscilloscope {
+    color: var(--oscilloscope-text-bright);
+    border-color: var(--oscilloscope-border);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.5);
+}
+
+.btn-oscilloscope:hover,
+.btn-oscilloscope:focus {
+    color: var(--oscilloscope-bg); /* Testo scuro al passaggio del mouse */
+    background-color: var(--oscilloscope-green); /* Sfondo verde brillante */
+    border-color: var(--oscilloscope-green);
+    box-shadow: 0 0 10px 3px rgba(0, 255, 0, 0.5); /* Glow più intenso */
+    text-shadow: none;
+}
+
+/* Per il bottone "Inizia" (usiamo outline-primary di Bootstrap come base) */
+#startGameBtn {
+    border-color: var(--oscilloscope-green);
+    color: var(--oscilloscope-green);
+}
+#startGameBtn:hover {
+     background-color: var(--oscilloscope-green);
+     color: var(--oscilloscope-bg);
+}
+
+
+/* Per i bottoni scelta (usiamo outline-secondary come base) */
+.modal-footer .btn-oscilloscope {
+    border-color: var(--oscilloscope-border);
+    color: var(--oscilloscope-text-bright);
+    width: 100%; /* Occupa tutta la larghezza del footer */
+    text-align: left; /* Allinea testo a sinistra per leggibilità scelte */
+    padding: 10px 15px;
+}
+
+.modal-footer .btn-oscilloscope:hover {
+    background-color: var(--oscilloscope-green);
+    color: var(--oscilloscope-bg);
+     border-color: var(--oscilloscope-green);
+}
+
+/* Opzionale: piccolo effetto scanline */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    z-index: 2; /* Sopra il contenuto ma sotto i modal (se necessario) */
+    pointer-events: none; /* Non interagibile */
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; } /* Simula movimento linea */
+}
