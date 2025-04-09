@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const storyData = {
         '1': {
             title: "Supermercato",
-            text: "È martedì sera. Sei appena tornato/a a casa dopo una lunga giornata di lavoro. La stanchezza si fa sentire e la fame brontola. Apri il frigorifero: desolatamente vuoto, a parte qualche yogurt e una bottiglia d'acqua. Devi assolutamente fare un salto al supermercato sotto casa per comprare qualcosa per cena. Hai voglia di qualcosa di semplice: pasta al pomodoro.",
+            text: "È martedì sera. Sei appena tornato/a a casa dopo una lunga giornata di lavoro. La stanchezza si fa sentire e lo stomaco brontola. Apri il frigorifero: desolatamente vuoto, a parte qualche yogurt e una bottiglia d'acqua. Devi assolutamente fare un salto al supermercato sotto casa per comprare qualcosa per cena. Hai voglia di qualcosa di semplice: pasta al pomodoro.",
             choices: [
                 { text: "Entri subito nel supermercato.", nextNode: '2' },
                 { text: "Prendi un volantino offerto da dei volontari fuori dal supermercato.", nextNode: '3' },
