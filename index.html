@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librogame Oscilloscopio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="tree-diagram-bg">
+        <svg width="100%" height="100%" style="position:absolute; top:0; left:0; z-index:-1; opacity: 0.1;">
+            <line x1="5%" y1="50%" x2="15%" y2="50%" stroke="#0f0" stroke-width="2"/>
+            <line x1="15%" y1="50%" x2="25%" y2="40%" stroke="#0f0" stroke-width="2"/>
+            <line x1="15%" y1="50%" x2="25%" y2="60%" stroke="#0f0" stroke-width="2"/>
+            <circle cx="15%" cy="50%" r="5" fill="#0f0"/>
+            <circle cx="25%" cy="40%" r="5" fill="#0f0"/>
+            <circle cx="25%" cy="60%" r="5" fill="#0f0"/>
+            </svg>
+    </div>
+
+    <div class="container-fluid main-content">
+        </div>
+
+    <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="introModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content oscilloscope-border">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="introModalLabel">Benvenuto</h5>
+                    </div>
+                <div class="modal-body">
+                    <h6>Regole del Gioco:</h6>
+                    <p>Leggi attentamente ogni situazione presentata. Avrai tre scelte a disposizione. Clicca sulla scelta che preferisci per proseguire nella storia. Le tue decisioni influenzeranno il susseguirsi degli eventi e il finale.</p>
+                    <hr>
+                    <h6>Inizio della Storia:</h6>
+                    <p id="introStoryText">
+                        Sei tu il protagonista di questa storia. Le tue scelte determineranno come si svilupperanno gli eventi. Leggi attentamente ogni paragrafo e poi decidi cosa fare, seguendo le istruzioni per passare al paragrafo successivo. Buona fortuna!
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-primary btn-oscilloscope" data-bs-dismiss="modal" id="startGameBtn">Avanti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="situationModal" tabindex="-1" aria-labelledby="situationModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content oscilloscope-border">
+                <div class="modal-header d-flex flex-row justify-content-around">
+                    <h6 class="p-2 text-center" id="situationModalDate"></h6>
+                    <h5 class="p-2 modal-title text-center" id="situationModalLabel">Situazione #1</h5>
+                    <h6 class="p-2 text-center" id="situationModalHour"></h6>
+                </div>
+                <div class="modal-body">
+                    <p id="situationText">
+                        Descrizione della situazione attuale... Cosa fai?
+                        </p>
+                </div>
+                <div class="modal-footer d-flex flex-column align-items-stretch">
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope mb-2" data-bs-dismiss="modal" data-choice="1" id="choice1">
+                        Scelta 1: Testo della scelta...
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope mb-2" data-bs-dismiss="modal" data-choice="2" id="choice2">
+                        Scelta 2: Testo della scelta...
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope" data-bs-dismiss="modal" data-choice="3" id="choice3">
+                        Scelta 3: Testo della scelta...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="timeanddateModal" tabindex="-1" aria-labelledby="situationModalLabel2" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content oscilloscope-border">
+                <div class="modal-header d-flex flex-row justify-content-around">
+                    <h5 class="p-2" id="situationModalLabel2">Data</h5>
+                    <h5 class="p-2 modal-title" id="situationModalLabel2">Situazione #1</h5>
+                    <h5 class="p-2" id="situationModalLabel2">Ora</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="situationText">
+                        Descrizione della situazione attuale... Cosa fai?
+                        </p>
+                </div>
+                <div class="modal-footer d-flex flex-column align-items-stretch">
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope mb-2" data-bs-dismiss="modal" data-choice="1" id="choice1">
+                        Scelta 1: Testo della scelta...
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope mb-2" data-bs-dismiss="modal" data-choice="2" id="choice2">
+                        Scelta 2: Testo della scelta...
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-oscilloscope" data-bs-dismiss="modal" data-choice="3" id="choice3">
+                        Scelta 3: Testo della scelta...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="game.js"></script>
+</body>
+</html>
