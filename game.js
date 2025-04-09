@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
              title: "Fine prematura",
              text: "Una scelta sbagliata ti ha portato a un vicolo cieco. L'avventura finisce qui.",
              choices: [
-                 { text: "Ricomincia dall'inizio.", nextNode: 'start' }, // Opzione per riavviare
+                 { text: "Ricomincia dall'inizio.", nextNode: '1' }, // Opzione per riavviare
                  { text: "Chiudi.", nextNode: 'end_game' }, // Opzione fittizia per terminare
                  { text: "", nextNode: ''} // Nasconde la terza scelta se non serve
             ]
