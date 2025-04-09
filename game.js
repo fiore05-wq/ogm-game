@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             date:"",
             hour:""  
         },
-        '11': {
+        '12': {
             title: "Finale 5",
             text: "Le informazioni che hai raccolto ti hanno convinto che, al di là dei potenziali benefici di alcuni specifici OGM, i rischi ambientali, sociali (controllo del mercato dei semi) e la mancanza di trasparenza a lungo termine siano troppo alti, specialmente per l'uso in agricoltura alimentare su vasta scala. Decidi di supportare attivamente le campagne per un'agricoltura senza OGM, magari firmando petizioni, partecipando a incontri informativi o scegliendo sempre e comunque prodotti garantiti senza OGM e supportando l'agricoltura biologica. La tua diventa una scelta non solo alimentare, ma anche politica.",
             choices: [
